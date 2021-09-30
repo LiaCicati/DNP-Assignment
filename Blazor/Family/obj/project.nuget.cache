@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qBnRnwvVpD4qfFiZUWGV+WVezLPmb5OQUo8O5D/NbQy4cXBJVuy3g2dAK8pIl/5RfP6vYX4NGxvfQ8HXUPmKlA==",
+  "dgSpecHash": "tCIK923uOkddRDP/1xXurI78zFNqY8zb6JKr4SkIJ1KXpL1jXQao0KtllEpVlRHFB8gHBzvSpmZHn+uoUs1jqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Family\\Family\\Family.csproj",
+  "projectFilePath": "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
