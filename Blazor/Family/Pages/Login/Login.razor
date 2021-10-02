@@ -1,0 +1,57 @@
+@page "/login"
+@namespace LoginComponent
+@using Family.Authentication
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+<section class="login">
+    <AuthorizeView>
+        <NotAuthorized>
+            <h2 class="heading">Please, Log In</h2>
+            <form name="login" class="form">
+
+
+                <label class="label">User name</label>
+                <input class="input" type="text" placeholder="user name" @bind-value="username"/>
+
+
+                <label class="label">Password</label>
+                <input class="input" type="password" placeholder="password" @bind-value="password"/>
+
+                <div class="input__error-message">@errorMessage</div>
+                <button class="login-button" type="button" @onclick="PerformLogin">
+                    Login
+                </button>
+            </form>
+        </NotAuthorized>
+        <Authorized>
+            @if (true)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+        </Authorized>
+    </AuthorizeView>
+</section>
+
+@code {
+    private string username;
+    private string password;
+    private string errorMessage;
+
+    public async Task PerformLogin()
+    {
+        errorMessage = "";
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
+            username = "";
+            password = "";
+        }
+        catch (Exception e)
+        {
+            errorMessage = e.Message;
+        }
+    }
+
+}
