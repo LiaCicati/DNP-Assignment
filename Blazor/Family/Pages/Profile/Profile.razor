@@ -1,0 +1,61 @@
+﻿@page "/Profile"
+@attribute [Authorize]
+@using Family.Authentication
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+<section class="profile">
+    <div class="profile-info">
+        <h2>Hello, @username</h2>
+        <form name="profile" class="form">
+            <div class="form-data__group">
+                <label>Username:</label>
+                <input
+                    class="input"
+                    value="@username"
+                    disabled="disabled"/>
+            </div>
+            <div class="form-data__group">
+                <label>Role:</label>
+                <input
+                    class="input"
+                    value="@role"
+                    disabled="disabled"/>
+            </div>
+            <div class="form-data__group">
+                <label>City:</label>
+                <input
+                    class="input"
+                    disabled="disabled"
+                    value="@city"/>
+            </div>
+        </form>
+        <div class="button-wrapper">
+            <button type="button" class="logout-button" @onclick="Logout">Log Out</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+@code{
+    private string username;
+    private string city;
+    private string role;
+
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        username = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().UserName;
+        city = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().City;
+        role = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().Role;
+    }
+
+    public void Logout()
+    {
+        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+        NavigationManager.NavigateTo("/login");
+    }
+
+}

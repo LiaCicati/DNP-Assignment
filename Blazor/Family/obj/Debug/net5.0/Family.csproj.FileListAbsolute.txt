@@ -181,3 +181,6 @@ C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.c
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Login\Login.razor.g.cs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Login\Login.razor.g.cs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Login\Login.razor.rz.scp.css
+C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Profile\Profile.razor.g.cs
+C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Profile\Profile.razor.g.cs
+C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Profile\Profile.razor.rz.scp.css

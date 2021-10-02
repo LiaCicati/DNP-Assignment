@@ -63,6 +63,11 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider {
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
     }
 
+    public User GetCachedUser()
+    {
+        return cachedUser;
+    }
+
     private ClaimsIdentity SetupClaimsForUser(User user) {
         List<Claim> claims = new List<Claim>();
         claims.Add(new Claim(ClaimTypes.Name, user.UserName));
