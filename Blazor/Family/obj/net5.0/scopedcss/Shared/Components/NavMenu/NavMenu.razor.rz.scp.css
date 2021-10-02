@@ -1,0 +1,45 @@
+.header__nav[b-w2iwl87fql] {
+    background: #fff;
+    padding: 20px 40px;
+}
+
+
+.collapse[b-w2iwl87fql] {
+    justify-content: space-between !important;
+}
+
+.header__nav-link[b-w2iwl87fql] {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #5C6A79;
+}
+
+.menu-button[b-w2iwl87fql] {
+    outline: none;
+}
+
+
+.header__link[b-w2iwl87fql] {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #5C6A79;
+}
+
+.header__link:hover[b-w2iwl87fql] {
+    opacity: .7;
+}
+
+
+.header__link_active[b-w2iwl87fql] {
+    font-weight: bolder;
+    color: #000;
+}
+
+.manage-profile[b-w2iwl87fql] {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
