@@ -1,0 +1,70 @@
+@using Family.Authentication
+@using Models
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+<header class="header">
+    <nav class="header__nav navbar navbar-expand-md navbar-expand-sm">
+
+        <img class="navbar-brand" src="images/logo.svg" alt="Logo">
+        <button class="navbar-toggler menu-button" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <img class="navbar-toggler-icon " src="images/menu.svg"/>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+
+
+            <ul class="header__nav-links navbar-nav">
+                <AuthorizeView>
+                    <Authorized>
+                        <li class="header__nav-link nav-item">
+                            <a href="" class="header__link header__link_active nav-link ">Home</a>
+                        </li>
+                    </Authorized>
+                </AuthorizeView>
+
+                <li class="header__nav-link nav-item">
+                    <a href="" class="header__link nav-link ">Adults</a>
+                </li>
+                <AuthorizeView>
+                    <Authorized>
+                        <li class="header__nav-link nav-item">
+                            <a href="" class="header__link nav-link">Children</a>
+                        </li>
+                    </Authorized>
+
+                </AuthorizeView>
+            </ul>
+            <AuthorizeView>
+                <Authorized>
+                    <ul class="manage-profile">
+                        <li class="header__nav-link nav-item">
+                            <a href="" class="header__link nav-link ">
+                                <img src="images/profile-icon.svg" alt="Profile icon"/>
+                            </a>
+                        </li>
+                        <li class="header__nav-link nav-item">
+                            <button type="button" @onclick="Logout">
+                            <img src="images/logout-icon.svg" alt="Logout icon"/>
+                            </button>
+                        </li>
+                    </ul>
+
+                </Authorized>
+                <NotAuthorized>
+
+                    <a href="/login">Login</a>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+    </nav>
+</header>
+
+@code {
+    public void Logout()
+    {
+        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+        NavigationManager.NavigateTo("/login");
+    }
+}

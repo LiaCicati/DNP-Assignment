@@ -1,0 +1,45 @@
+.header__nav {
+    background: #fff;
+    padding: 20px 40px;
+}
+
+
+.collapse {
+    justify-content: space-between !important;
+}
+
+.header__nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #5C6A79;
+}
+
+.menu-button {
+    outline: none;
+}
+
+
+.header__link {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    color: #5C6A79;
+}
+
+.header__link:hover {
+    opacity: .7;
+}
+
+
+.header__link_active {
+    font-weight: bolder;
+    color: #000;
+}
+
+.manage-profile {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

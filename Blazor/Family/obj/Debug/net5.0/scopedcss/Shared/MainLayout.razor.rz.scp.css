@@ -1,11 +1,16 @@
 .page[b-dy4wxczd3d] {
-    position: relative;
+   
     display: flex;
     flex-direction: column;
+  
+   
 }
 
 .main[b-dy4wxczd3d] {
     flex: 1;
+    background: url("images/banner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .sidebar[b-dy4wxczd3d] {
@@ -21,7 +26,7 @@
     align-items: center;
 }
 
-    .top-row[b-dy4wxczd3d]  a, .top-row .btn-link[b-dy4wxczd3d] {
+    .top-row  a[b-dy4wxczd3d], .top-row .btn-link[b-dy4wxczd3d] {
         white-space: nowrap;
         margin-left: 1.5rem;
     }

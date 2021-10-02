@@ -82,7 +82,6 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclarat
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.RazorComponent.output.cache
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Family.dll
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.TagHelpers.input.cache
@@ -95,7 +94,6 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\I
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\_Host.cshtml.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.RazorAssemblyInfo.cache
@@ -103,7 +101,6 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.RazorA
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\staticwebassets\Family.StaticWebAssets.Manifest.cache
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\staticwebassets\Family.StaticWebAssets.xml
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\bundle\Family.styles.css
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\projectbundle\Family.bundle.scp.css
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.RazorTargetAssemblyInfo.cache
@@ -114,3 +111,10 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\ref\Family.dl
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.pdb
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.genruntimeconfig.cache
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.csproj.CopyComplete
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\json-files\adults.json
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\json-files\families.json
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Shared\Components\NavMenu\NavMenu.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Shared\Components\NavMenu\NavMenu.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Shared\Components\NavMenu\NavMenu.razor.rz.scp.css
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
