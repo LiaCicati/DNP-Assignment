@@ -89,13 +89,6 @@ using Family.Shared.Components.NavMenu;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\Shared\MainLayout.razor"
-using LoginComponent;
-
-#line default
-#line hidden
-#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
