@@ -98,7 +98,7 @@ using Family.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\Pages\Login\Login.razor"
+#line 37 "C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\Pages\Login\Login.razor"
        
     private string username;
     private string password;
@@ -118,16 +118,6 @@ using Family.Authentication;
             errorMessage = e.Message;
         }
     }
-
-    // public async Task PerformLogout() {
-    //     errorMessage = "";
-    //     username = "";
-    //     password = "";
-    //     try {
-    //         ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-    //         NavigationManager.NavigateTo("/");
-    //     } catch (Exception e) { }
-    // }
 
 
 #line default
