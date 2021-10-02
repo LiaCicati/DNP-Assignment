@@ -21,7 +21,7 @@
     line-height: 12px;
     padding: 20px 0;
     color: #ee3465;
-    
+
 }
 
 .heading[b-3wez6rnu0m] {
@@ -61,7 +61,7 @@
     .login[b-3wez6rnu0m] {
         padding: 56px 30px 30px;
     }
-    
+
     .heading[b-3wez6rnu0m] {
         font-size: 24px;
     }
@@ -131,6 +131,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.login-link[b-w2iwl87fql] {
+    background: #6C79D9;
+    border-radius: 8px;
+    padding: 8px 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout-button[b-w2iwl87fql] {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+@media screen and (max-width: 573px) {
+.login-link[b-w2iwl87fql] {
+    justify-content: center;
+    display: flex;
+    max-width: 80px;
+    margin: 0 auto;
+}
 }
 /* _content/Family/Shared/MainLayout.razor.rz.scp.css */
 .page[b-dy4wxczd3d] {

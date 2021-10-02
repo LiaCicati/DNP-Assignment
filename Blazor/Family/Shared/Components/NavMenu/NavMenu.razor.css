@@ -43,3 +43,26 @@
     align-items: center;
     justify-content: center;
 }
+
+.login-link {
+    background: #6C79D9;
+    border-radius: 8px;
+    padding: 8px 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+@media screen and (max-width: 573px) {
+.login-link {
+    justify-content: center;
+    display: flex;
+    max-width: 80px;
+    margin: 0 auto;
+}
+}

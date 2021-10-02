@@ -44,7 +44,7 @@
                             </a>
                         </li>
                         <li class="header__nav-link nav-item">
-                            <button type="button" @onclick="Logout">
+                            <button class="logout-button" type="button" @onclick="Logout">
                             <img src="images/logout-icon.svg" alt="Logout icon"/>
                             </button>
                         </li>
@@ -53,7 +53,7 @@
                 </Authorized>
                 <NotAuthorized>
 
-                    <a href="/login">Login</a>
+                    <a class="login-link" href="/login">Login</a>
                 </NotAuthorized>
             </AuthorizeView>
         </div>
