@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
+using Models;
 
-namespace Models {
-    public class Adult : Person {
-        public string JobTitle { get; set; }
-
-     
-}
+namespace Family.Models
+{
+    public class Adult : Person
+    {
+        public Job JobTitle { get; set; }
+    }
 }

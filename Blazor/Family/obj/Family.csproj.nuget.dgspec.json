@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Loredana Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj": {}
+    "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Loredana Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj": {
+    "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Loredana Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj",
+        "projectUniqueName": "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj",
         "projectName": "Family",
-        "projectPath": "C:\\Users\\Loredana Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj",
-        "packagesPath": "C:\\Users\\Loredana Cicati\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Loredana Cicati\\DNP-Assignment1\\Blazor\\Family\\obj\\",
+        "projectPath": "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\Family.csproj",
+        "packagesPath": "C:\\Users\\Lia Cicati\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lia Cicati\\DNP-Assignment1\\Blazor\\Family\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Loredana Cicati\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Lia Cicati\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

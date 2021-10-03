@@ -1,5 +1,9 @@
 [
   {
+    "JobTitle": {
+      "JobTitle": "Mascot",
+      "Salary": 99821
+    },
     "Id": 0,
     "FirstName": "Yasmine",
     "LastName": "Baxter",
@@ -9,17 +13,5 @@
     "Weight": 39.8,
     "Height": 174,
     "Sex": "F"
-  },
-  {
-    "Id": 1,
-    "FirstName": "Lyla",
-    "LastName": "Humphrey",
-    "HairColor": "Black",
-    "EyeColor": "Brown",
-    "Age": 36,
-    "Weight": 64.8,
-    "Height": 147,
-    "Sex": "F"
   }
-  
 ]

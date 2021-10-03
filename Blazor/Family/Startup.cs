@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Family.Data;
 using Family.Data.Impl;
+using Family.Persistence;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Family
@@ -35,7 +36,8 @@ namespace Family
             services.AddScoped<IUserService, InMemoryUserService>();
             
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            services.AddScoped<IAdultData, AdultJSONData>();
+            services.AddScoped<IAdultService, AdultService>();
+            services.AddScoped<FileContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

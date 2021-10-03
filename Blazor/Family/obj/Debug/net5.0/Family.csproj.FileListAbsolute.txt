@@ -112,12 +112,9 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.pdb
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.genruntimeconfig.cache
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Family.csproj.CopyComplete
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\json-files\adults.json
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\json-files\families.json
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Shared\Components\NavMenu\NavMenu.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Shared\Components\NavMenu\NavMenu.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Shared\Components\NavMenu\NavMenu.razor.rz.scp.css
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
-C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\appsettings.json
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\json-files\adults.json
@@ -187,3 +184,14 @@ C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Adults.razor.g.cs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Adults.razor.g.cs
 C:\Users\Loredana Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\adults.json
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\adults.json
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Login\Login.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Profile\Profile.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Login\Login.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Profile\Profile.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Login\Login.razor.rz.scp.css
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Profile\Profile.razor.rz.scp.css
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\Adults\Adults.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Adults\Adults.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Adults\Adults.razor.rz.scp.css
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\families.json
