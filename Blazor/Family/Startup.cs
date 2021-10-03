@@ -35,6 +35,7 @@ namespace Family
             services.AddScoped<IUserService, InMemoryUserService>();
             
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+            services.AddScoped<IAdultData, AdultJSONData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
