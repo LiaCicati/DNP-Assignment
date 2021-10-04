@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace Family.Pages.Profile
+namespace Family.Pages.AddAdult
 {
     #line hidden
     using System;
@@ -83,14 +83,35 @@ using Family.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\Profile\Profile.razor"
-using Family.Authentication;
+#line 3 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\AddAdult\AddAdult.razor"
+using Family.Models;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Profile")]
-    public partial class Profile : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 4 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\AddAdult\AddAdult.razor"
+using Family.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\AddAdult\AddAdult.razor"
+using Family.Persistence;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\AddAdult\AddAdult.razor"
+using global::Models;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/addAdult")]
+    public partial class AddAdult : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,33 +119,55 @@ using Family.Authentication;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\Profile\Profile.razor"
+#line 83 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\AddAdult\AddAdult.razor"
       
-    private string username;
-    private string city;
-    private string role;
+    private string fname;
+    private string lname;
+    private string age;
+    private string hairColor;
+    private string eyeColor;
+    private string weight;
+    private string height;
+    private string sex;
+    private string job;
+    private string salary;
+    private string street;
+    private string houseNr;
 
-
-    protected override void OnInitialized()
+    public void Submit()
     {
-        base.OnInitialized();
-        username = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().UserName;
-        city = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().City;
-        role = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().Role;
+        var Adult = new Adult();
+        Adult.FirstName = fname;
+        Adult.LastName = lname;
+        Adult.HairColor = hairColor;
+        Adult.EyeColor = eyeColor;
+        Adult.Age = Int32.Parse(age);
+        Adult.Weight = float.Parse(weight);
+        Adult.Height = Int32.Parse(height);
+        Adult.Sex = sex;
+        var Job = new Job();
+        Job.JobTitle = job;
+        Job.Salary = Int32.Parse(salary);
+        Adult.JobTitle = Job;
+
+        var id = FileContext.Adults.Last<Adult>().Id;
+        Adult.Id = id + 1;
+
+        adultData.AddAdult(Adult);
+
+        NavigationManager.NavigateTo("/adults");
     }
 
-    public void Logout()
-    {
-        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-        NavigationManager.NavigateTo("/login");
-    }
+
+
 
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private FileContext FileContext { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAdultService adultData { get; set; }
     }
 }
 #pragma warning restore 1591

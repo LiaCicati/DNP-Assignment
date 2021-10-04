@@ -1,30 +1,47 @@
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
 using Family.Models;
 using Family.Persistence;
 
 namespace Family.Data.Impl
 {
     public class AdultService : IAdultService
-    {
-        private FileContext familyFile;
-        IList<Adult> adults = new List<Adult>();
 
-        public AdultService(FileContext familyFile)
+    {
+        private FileContext _fileContext;
+        private IList<Adult> _adults;
+
+        public AdultService(FileContext fileContext)
         {
-            this.familyFile = familyFile;
+            _fileContext = fileContext;
+            _adults = _fileContext.Adults;
+        }
+
+        public void SaveChanges()
+        {
+            _fileContext.SaveChanges();
         }
 
         public IList<Adult> GetAdults()
         {
-            foreach (var item in familyFile.Families)
-            {
-                foreach (var adult in item.Adults)
-                {
-                    adults.Add(adult);
-                }
-            }
+            List<Adult> tmp = new List<Adult>(_adults);
+            return tmp;
+        }
 
-            return adults;
+        public void AddAdult(Adult adult)
+        {
+            adult.Id = _adults.Max(a => a.Id) + 1;
+            _adults.Add(adult);
+            SaveChanges();
+        }
+
+        public void RemoveAdult(int adultId)
+        {
+            Adult toRemove = _adults.First(a => a.Id == adultId);
+            _adults.Remove(toRemove);
+            SaveChanges();
         }
     }
 }

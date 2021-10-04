@@ -195,3 +195,5 @@ C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclarat
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\Adults\Adults.razor.g.cs
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\scopedcss\Pages\Adults\Adults.razor.rz.scp.css
 C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\bin\Debug\net5.0\families.json
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\RazorDeclaration\Pages\AddAdult\AddAdult.razor.g.cs
+C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\obj\Debug\net5.0\Razor\Pages\AddAdult\AddAdult.razor.g.cs

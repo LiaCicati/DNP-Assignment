@@ -105,7 +105,7 @@ using Family.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 55 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\Adults\Adults.razor"
+#line 59 "C:\Users\Lia Cicati\DNP-Assignment1\Blazor\Family\Pages\Adults\Adults.razor"
        
     private IList<Adult> AdultsToShow;
     private IList<Adult> AllAdults;
@@ -117,6 +117,14 @@ using Family.Data;
         AdultsToShow = AllAdults;
     }
 
+    private void RemoveAdult(int adultId)
+    {
+        Adult adultToRemove = AllAdults.First(a => a.Id == adultId);
+        _adultService.RemoveAdult(adultId);
+        AllAdults.Remove(adultToRemove);
+        AdultsToShow.Remove(adultToRemove);
+    }
+    
 
 #line default
 #line hidden
