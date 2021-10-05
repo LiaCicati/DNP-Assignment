@@ -1,10 +1,17 @@
 ﻿@page "/adults"
 @using Models
 @using Family.Data
+@using Microsoft.AspNetCore.Mvc.Filters
 @inject IAdultService _adultService;
 
 
 <h3>Adult data</h3>
+<p> Filter by User Id: <input type="number" @oninput="@((arg) => FilterByUserId(arg))" style="width:50px"/> </p>
+ <p>
+        Filter by First Name:
+        <input type="text" @oninput="@((arg) => FilterByFirstName(arg))"/>
+    </p>
+
 
 @if (AdultsToShow == null)
 {
@@ -60,6 +67,41 @@ else
     private IList<Adult> AdultsToShow;
     private IList<Adult> AllAdults;
 
+    private int? filterById;
+    private bool? filterByIsCompleted;
+    private string? filterByName;
+
+    private void FilterByUserId(ChangeEventArgs changeEventArgs)
+    {
+        filterById = null;
+        try
+        {
+            filterById = int.Parse(changeEventArgs.Value.ToString());
+        }
+        catch (Exception e)
+        {
+    // ignored
+        }
+        ExecuteFilter();
+    }
+    
+    private void FilterByFirstName(ChangeEventArgs changeEventArgs)
+    {
+        filterByName = null;
+        try
+        {
+            filterByName = changeEventArgs.Value.ToString();
+        }
+        catch (Exception e)
+        {
+        }
+        ExecuteFilter();
+    }
+    private void ExecuteFilter()
+    {
+        AdultsToShow = AllAdults.Where(a => (filterById!=null && a.Id == filterById || filterById == null) &&
+                                            (filterByName != null && a.FirstName.ToLower().Contains(filterByName.ToLower()) || filterByName == null )).ToList();
+    }
 
     protected override async Task OnInitializedAsync()
     {
