@@ -238,5 +238,20 @@
     "Weight": 44,
     "Height": 167,
     "Sex": "F"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "Kitchen assistant",
+      "Salary": 1000
+    },
+    "Id": 16,
+    "FirstName": "Loredana",
+    "LastName": "Cicati",
+    "HairColor": "Brown",
+    "EyeColor": "Brown",
+    "Age": 20,
+    "Weight": 49,
+    "Height": 164,
+    "Sex": "F"
   }
 ]

@@ -26,6 +26,10 @@
     color: #5C6A79;
 }
 
+
+
+
+
 .header__link:hover {
     opacity: .7;
 }
@@ -45,6 +49,7 @@
 }
 
 .login-link {
+    font-weight: 500;
     background: #6C79D9;
     border-radius: 8px;
     padding: 8px 18px;
@@ -65,5 +70,6 @@
     display: flex;
     max-width: 80px;
     margin: 0 auto;
+    
 }
 }

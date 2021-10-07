@@ -5,7 +5,7 @@
 <header class="header">
     <nav class="header__nav navbar navbar-expand-md navbar-expand-sm">
         <a class="header__link" href="/">
-        <img class="navbar-brand" src="images/logo.svg" alt="Logo">
+            <img class="navbar-brand" src="images/logo.svg" alt="Logo">
         </a>
         <button class="navbar-toggler menu-button" type="button" data-toggle="collapse" data-target="#myNavbar">
             <img class="navbar-toggler-icon " src="images/menu.svg"/>
@@ -16,22 +16,10 @@
 
 
             <ul class="header__nav-links navbar-nav">
+                <NavLink href="/adults" class="nav-link">Adults</NavLink>
                 <AuthorizeView>
                     <Authorized>
-                        <li class="header__nav-link nav-item">
-                            <a href="" class="header__link header__link_active nav-link ">Home</a>
-                        </li>
-                    </Authorized>
-                </AuthorizeView>
-
-                <li class="header__nav-link nav-item">
-                    <a href="/adults" class="header__link nav-link ">Adults</a>
-                </li>
-                <AuthorizeView>
-                    <Authorized>
-                        <li class="header__nav-link nav-item">
-                            <a href="/addAdult" class="header__link nav-link">Add Adults</a>
-                        </li>
+                        <NavLink href="/addAdult" class="nav-link">Add adults</NavLink>
                     </Authorized>
 
                 </AuthorizeView>
@@ -46,7 +34,7 @@
                         </li>
                         <li class="header__nav-link nav-item">
                             <button class="logout-button" type="button" @onclick="Logout">
-                            <img src="images/logout-icon.svg" alt="Logout icon"/>
+                                <img src="images/logout-icon.svg" alt="Logout icon"/>
                             </button>
                         </li>
                     </ul>
@@ -63,9 +51,11 @@
 </header>
 
 @code {
+
     public void Logout()
     {
         ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
         NavigationManager.NavigateTo("/login");
     }
+
 }

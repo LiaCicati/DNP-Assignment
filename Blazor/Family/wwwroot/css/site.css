@@ -6,9 +6,9 @@ html, body {
    
 }
 
-a, .btn-link {
-    color: #0366d6;
-}
+/*a, .btn-link {*/
+/*    color: #0366d6;*/
+/*}*/
 
 .quote-container {
     max-width: 800px;
@@ -79,4 +79,18 @@ button:hover {
 
 a:hover {
     opacity: 0.8;
+}
+
+a {
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #5C6A79;
+}
+
+a.active {
+    font-weight: bolder;
+    color: #000;
 }
