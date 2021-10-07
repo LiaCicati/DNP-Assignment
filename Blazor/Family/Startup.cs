@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Family.Authentication;
 using Microsoft.AspNetCore.Builder;
@@ -34,11 +35,24 @@ namespace Family
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddScoped<IUserService, InMemoryUserService>();
-            
+
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddScoped<IAdultService, AdultService>();
             services.AddScoped<FileContext>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("LevelAdmin", a => a.RequireAuthenticatedUser().RequireAssertion(
+                    context =>
+                    {
+                        Claim levelClaim = context.User.FindFirst(claim => claim.Type.Equals("Level"));
+                        if (levelClaim == null) return false;
+                        return int.Parse(levelClaim.Value) >= 5;
+                    }));
+                // options.AddPolicy("Teacher", a => a.RequireAuthenticatedUser().RequireClaim("Role", "Teacher"));
+            });
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

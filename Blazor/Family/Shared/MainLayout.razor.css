@@ -8,9 +8,8 @@
 
 .main {
     flex: 1;
-    background: url("images/banner.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: #ffe0e2;
+   
 }
 
 .sidebar {

@@ -9,18 +9,33 @@ namespace Family.Data.Impl
     {
         private List<User> users;
 
-        public InMemoryUserService() {
-            users = new[] {
-                new User {
+        public InMemoryUserService()
+        {
+            users = new[]
+            {
+                new User
+                {
                     City = "Horsens",
                     Domain = "via.dk",
                     Password = "123456",
                     Role = "Teacher",
                     BirthYear = 1986,
-                    SecurityLevel = 5,
+                    SecurityLevel = 4,
                     UserName = "Troels"
                 },
-                new User {
+
+                new User
+                {
+                    City = "Horsens",
+                    Domain = "via.dk",
+                    Password = "123456",
+                    Role = "Admin",
+                    BirthYear = 2001,
+                    SecurityLevel = 5,
+                    UserName = "Lia"
+                },
+                new User
+                {
                     City = "Aarhus",
                     Domain = "hotmail.com",
                     Password = "123456",
@@ -29,7 +44,8 @@ namespace Family.Data.Impl
                     SecurityLevel = 3,
                     UserName = "Jakob"
                 },
-                new User {
+                new User
+                {
                     City = "Vejle",
                     Domain = "via.com",
                     Password = "123456",
@@ -42,13 +58,16 @@ namespace Family.Data.Impl
         }
 
 
-        public User ValidateUser(string userName, string password) {
+        public User ValidateUser(string userName, string password)
+        {
             User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
-            if (first == null) {
+            if (first == null)
+            {
                 throw new Exception("User not found");
             }
 
-            if (!first.Password.Equals(password)) {
+            if (!first.Password.Equals(password))
+            {
                 throw new Exception("Incorrect password");
             }
 

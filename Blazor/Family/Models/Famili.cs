@@ -5,7 +5,7 @@ using Models;
 
 namespace Family.Models
 {
-    public class Family
+    public class Famili
     {
         //public int Id { get; set; }
         public string StreetName { get; set; }
@@ -14,7 +14,7 @@ namespace Family.Models
         public List<Child> Children { get; set; }
         public List<Pet> Pets { get; set; }
 
-        public Family()
+        public Famili()
         {
             Adults = new List<Adult>();
         }

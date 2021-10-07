@@ -9,7 +9,7 @@ namespace Family.Persistence
 {
     public class FileContext
     {
-        public IList<Models.Family> Families { get; private set; }
+        public IList<Models.Famili> Families { get; private set; }
         public IList<Adult> Adults { get; private set; }
 
         private readonly string familiesFile = "families.json";
@@ -17,7 +17,7 @@ namespace Family.Persistence
 
         public FileContext()
         {
-            Families = File.Exists(familiesFile) ? ReadData<Models.Family>(familiesFile) : new List<Models.Family>();
+            Families = File.Exists(familiesFile) ? ReadData<Models.Famili>(familiesFile) : new List<Models.Famili>();
             Adults = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
         }
 

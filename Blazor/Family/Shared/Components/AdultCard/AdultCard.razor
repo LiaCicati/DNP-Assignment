@@ -1,0 +1,79 @@
+@using Family.Models
+@using Family.Persistence
+@using Family.Data.Impl
+@using Family.Data
+@using global::Models
+@inject IAdultService adultService
+@inherits LayoutComponentBase
+<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 my-2">
+    <div class="card">
+        <h3 class="card__title">@AdultItem.FirstName @AdultItem.LastName</h3>
+        <p class="card__subtitle">@AdultItem.JobTitle.JobTitle</p>
+        <span class="card__members-count">@AdultItem.Id</span>
+        <AuthorizeView Policy="LevelAdmin">
+           
+            <button class="card__delete-button" @onclick=@(() => RemoveAdult.InvokeAsync(AdultItem.Id))></button>
+           
+        </AuthorizeView>
+        <AuthorizeView>
+            <Authorized>
+        @if (Expand)
+        {
+            <p>
+                <b>Sex:&nbsp;</b> @AdultItem.Sex
+            </p>
+
+            <p>
+                <b>Salary:&nbsp;</b> @AdultItem.JobTitle.Salary
+            </p>
+
+            <p>
+                <b>Age:&nbsp;</b> @AdultItem.Age
+            </p>
+            <p>
+                <b>Height:&nbsp;</b>@AdultItem.Height
+            </p>
+            <p>
+                <b>Weight:&nbsp;</b> @AdultItem.Weight
+            </p>
+            <p>
+                <b>Eye color:&nbsp;</b> @AdultItem.EyeColor
+            </p>
+            <p >
+                <b>Hair color:&nbsp;</b> @AdultItem.HairColor
+            </p>
+        }
+
+
+        @if (Expand)
+        {
+            <button class="card__button-collapse" @onclick="@(() => Expand = !Expand)"></button>
+        }
+        else
+        {
+            <button class="card__button-expand" @onclick="@(() => Expand = !Expand)"></button>
+        }
+             </Authorized>
+         </AuthorizeView>
+    </div>
+
+</div>
+
+@code{
+    bool Expand = false;
+}
+
+
+@code {
+
+    [Parameter]
+    public Adult AdultItem { get; set; }
+
+    [Parameter]
+    public EventCallback<int> RemoveAdult { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+    }
+
+}
