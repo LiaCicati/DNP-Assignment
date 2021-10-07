@@ -1,8 +1,15 @@
 @page "/"
+
 <div class="quote-container">
-<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    <AuthorizeView>
+        <Authorized>
+            <h1>Welcome back, @context.User.Identity.Name!</h1>
+        </Authorized>
+        <NotAuthorized>
+            <h1>Log In to add adults, see their detailed data and interesting statistics</h1>
+        </NotAuthorized>
+    </AuthorizeView>
 </div>
 <div class="lead-image__wrapper">
-<img src="images/lead-image.svg" class="img-fluid" alt="Lead Image"/>
+    <img src="images/lead-image.svg" class="img-fluid" alt="Lead Image"/>
 </div>
-

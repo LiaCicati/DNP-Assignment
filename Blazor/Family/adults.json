@@ -223,5 +223,20 @@
     "Weight": 81.8,
     "Height": 172,
     "Sex": "M"
+  },
+  {
+    "JobTitle": {
+      "JobTitle": "Web developer",
+      "Salary": 4000
+    },
+    "Id": 15,
+    "FirstName": "Lia",
+    "LastName": "Cicati",
+    "HairColor": "Brown",
+    "EyeColor": "Brown",
+    "Age": 20,
+    "Weight": 44,
+    "Height": 167,
+    "Sex": "F"
   }
 ]
