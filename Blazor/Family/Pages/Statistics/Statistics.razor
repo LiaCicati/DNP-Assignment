@@ -1,0 +1,92 @@
+﻿@page "/statistics"
+@using Models
+@using Family.Data
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Charts
+@inject IAdultService AdultService;
+@inject NavigationManager NavigationManager
+
+
+<SfAccumulationChart Title="Eye color statistics">
+    <AccumulationChartSeriesCollection>
+        <AccumulationChartSeries DataSource="@data" XName="xValue" YName="yValue"
+                                 Name="Color">
+            <AccumulationDataLabelSettings Visible="true" Name="total" Position="AccumulationLabelPosition.Outside"></AccumulationDataLabelSettings>
+        </AccumulationChartSeries>
+    </AccumulationChartSeriesCollection>
+
+    <AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+</SfAccumulationChart>
+
+
+<SfAccumulationChart Title="Hair statistics">
+    <AccumulationChartSeriesCollection>
+        <AccumulationChartSeries DataSource="@dataSource" XName="xValue" YName="yValue" Name="Hair"
+                                 Type="AccumulationType.Pyramid" Width="30%" Height="90%">
+            <AccumulationDataLabelSettings Visible="true" Name="total" Position="AccumulationLabelPosition.Outside"></AccumulationDataLabelSettings>
+        </AccumulationChartSeries>
+    </AccumulationChartSeriesCollection>
+
+    <AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+</SfAccumulationChart>
+
+
+@code{
+    private IList<Adult> adults;
+    private static IList<Adult> adultsData;
+
+
+    public class PieChart
+    {
+        public string xValue { get; set; }
+        public double yValue { get; set; }
+        public string total { get; set; }
+    }
+
+    private List<PieChart> data = new List<PieChart>();
+    private List<PieChart> dataSource = new List<PieChart>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        adults = AdultService.GetAdults();
+        adultsData = adults;
+        data.Add(new PieChart {xValue = "Grey", yValue = GetPersonsWithEyeColor("Grey")});
+        data.Add(new PieChart {xValue = "Brown", yValue = GetPersonsWithEyeColor("Brown")});
+        data.Add(new PieChart {xValue = "Blue", yValue = GetPersonsWithEyeColor("Blue")});
+        data.Add(new PieChart {xValue = "Green", yValue = GetPersonsWithEyeColor("Green")});
+        data.Add(new PieChart {xValue = "Amber", yValue = GetPersonsWithEyeColor("Amber")});
+        dataSource.Add(new PieChart {xValue = "Brown", yValue = GetPersonWithHairColor("Brown")});
+        dataSource.Add(new PieChart {xValue = "Black", yValue = GetPersonWithHairColor("Black")});
+        dataSource.Add(new PieChart {xValue = "White", yValue = GetPersonWithHairColor("White")});
+    }
+
+    int GetPersonWithHairColor(string hairColor)
+    {
+        int p = 0;
+        foreach (var adult in adultsData)
+        {
+            if (String.Equals(hairColor, adult.HairColor, StringComparison.CurrentCultureIgnoreCase))
+            {
+                p++;
+            }
+        }
+        return p;
+    }
+
+
+    int GetPersonsWithEyeColor(string eyeColor)
+    {
+        int p = 0;
+        foreach (var adult in adultsData)
+        {
+            if (String.Equals(eyeColor, adult.EyeColor, StringComparison.CurrentCultureIgnoreCase))
+            {
+                p++;
+            }
+        }
+        return p;
+    }
+
+}
+

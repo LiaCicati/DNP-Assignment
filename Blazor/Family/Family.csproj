@@ -15,4 +15,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Syncfusion.Blazor" Version="19.3.0.44" />
+    </ItemGroup>
+
 </Project>

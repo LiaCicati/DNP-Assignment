@@ -15,6 +15,7 @@ using Family.Data;
 using Family.Data.Impl;
 using Family.Persistence;
 using Microsoft.AspNetCore.Components.Authorization;
+using Syncfusion.Blazor;
 
 namespace Family
 {
@@ -39,6 +40,7 @@ namespace Family
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddScoped<IAdultService, AdultService>();
             services.AddScoped<FileContext>();
+            services.AddSyncfusionBlazor();
 
             services.AddAuthorization(options =>
             {
@@ -57,6 +59,7 @@ namespace Family
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTEyNDI1QDMxMzkyZTMzMmUzMExCZEtjSU1RZUJ5a1NPMUVkSXJQZFdyUmhZWmFhWjAvdkgycjdkL2dZMGM9");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
