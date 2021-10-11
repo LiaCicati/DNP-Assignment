@@ -1,24 +1,24 @@
 ﻿@page "/Profile"
 @attribute [Authorize]
 @using Family.Authentication
-@inject AuthenticationStateProvider AuthenticationStateProvider
-@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
 <section class="profile">
     <div class="profile-info">
-        <h2 class="heading">Hello, @username</h2>
+        <h2 class="heading">Hello, @_username</h2>
         <form name="profile" class="form">
             <div class="form-data__group">
                 <label>Username:</label>
                 <input
                     class="input"
-                    value="@username"
+                    value="@_username"
                     disabled="disabled"/>
             </div>
             <div class="form-data__group">
                 <label>Role:</label>
                 <input
                     class="input"
-                    value="@role"
+                    value="@_role"
                     disabled="disabled"/>
             </div>
             <div class="form-data__group">
@@ -26,7 +26,7 @@
                 <input
                     class="input"
                     disabled="disabled"
-                    value="@city"/>
+                    value="@_city"/>
             </div>
         </form>
         <div class="button-wrapper">
@@ -39,23 +39,23 @@
 
 
 @code{
-    private string username;
-    private string city;
-    private string role;
+    private string _username;
+    private string _city;
+    private string _role;
 
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        username = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().UserName;
-        city = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().City;
-        role = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetCachedUser().Role;
+        _username = ((CustomAuthenticationStateProvider) _authenticationStateProvider).GetCachedUser().UserName;
+        _city = ((CustomAuthenticationStateProvider) _authenticationStateProvider).GetCachedUser().City;
+        _role = ((CustomAuthenticationStateProvider) _authenticationStateProvider).GetCachedUser().Role;
     }
 
     public void Logout()
     {
-        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-        NavigationManager.NavigateTo("/login");
+        ((CustomAuthenticationStateProvider) _authenticationStateProvider).Logout();
+        _navigationManager.NavigateTo("/login");
     }
 
 }

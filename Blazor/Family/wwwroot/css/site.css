@@ -3,7 +3,7 @@
 
 html, body {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-   
+
 }
 
 /*a, .btn-link {*/
@@ -25,6 +25,7 @@ html, body {
     align-items: center;
     justify-content: center;
 }
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
@@ -59,22 +60,24 @@ html, body {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
 
-    button {
-        transition: opacity 0.3s ease-in-out;
-    }
-    a {
-        transition: opacity 0.3s ease-in-out;
-    }
+button {
+    transition: opacity 0.3s ease-in-out;
+}
+
+a {
+    transition: opacity 0.3s ease-in-out;
+}
+
 button:hover {
     opacity: 0.8;
-    
+
 }
 
 a:hover {

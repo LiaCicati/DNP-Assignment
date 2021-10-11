@@ -18,17 +18,6 @@ namespace Family.Data.Impl
                     City = "Horsens",
                     Domain = "via.dk",
                     Password = "123456",
-                    Role = "Teacher",
-                    BirthYear = 1986,
-                    SecurityLevel = 4,
-                    UserName = "Troels"
-                },
-
-                new User
-                {
-                    City = "Horsens",
-                    Domain = "via.dk",
-                    Password = "123456",
                     Role = "Admin",
                     BirthYear = 2001,
                     SecurityLevel = 5,
@@ -36,24 +25,14 @@ namespace Family.Data.Impl
                 },
                 new User
                 {
-                    City = "Aarhus",
+                    City = "Horsens",
                     Domain = "hotmail.com",
                     Password = "123456",
                     Role = "Student",
-                    BirthYear = 1998,
+                    BirthYear = 2001,
                     SecurityLevel = 3,
-                    UserName = "Jakob"
+                    UserName = "Loredana"
                 },
-                new User
-                {
-                    City = "Vejle",
-                    Domain = "via.com",
-                    Password = "123456",
-                    Role = "Guest",
-                    BirthYear = 1973,
-                    SecurityLevel = 1,
-                    UserName = "Kasper"
-                }
             }.ToList();
         }
 

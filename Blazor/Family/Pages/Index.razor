@@ -3,7 +3,13 @@
 <div class="quote-container">
     <AuthorizeView>
         <Authorized>
-            <h1>Welcome back, @context.User.Identity.Name!</h1>
+            <h1>
+                Welcome back,
+                @if (context.User.Identity != null)
+                {
+                    @context.User.Identity.Name!
+                }
+            </h1>
         </Authorized>
         <NotAuthorized>
             <h1>Log In to add adults, see their detailed data and interesting statistics</h1>

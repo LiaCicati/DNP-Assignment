@@ -1,14 +1,14 @@
 @using Family.Authentication
 @using Models
-@inject AuthenticationStateProvider AuthenticationStateProvider
-@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
 <header class="header">
     <nav class="header__nav navbar navbar-expand-md navbar-expand-sm">
         <a class="header__link" href="/">
             <img class="navbar-brand" src="images/logo.svg" alt="Logo">
         </a>
         <button class="navbar-toggler menu-button" type="button" data-toggle="collapse" data-target="#myNavbar">
-            <img class="navbar-toggler-icon " src="images/menu.svg"/>
+            <img class="navbar-toggler-icon " alt="Menu icon" src="images/menu.svg"/>
         </button>
 
 
@@ -17,7 +17,7 @@
 
             <ul class="header__nav-links navbar-nav">
                 <NavLink href="/adults" class="nav-link">Adults</NavLink>
-                
+
                 <AuthorizeView>
                     <Authorized>
                         <NavLink href="/addAdult" class="nav-link">Add adults</NavLink>
@@ -56,8 +56,8 @@
 
     public void Logout()
     {
-        ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-        NavigationManager.NavigateTo("/login");
+        ((CustomAuthenticationStateProvider) _authenticationStateProvider).Logout();
+        _navigationManager.NavigateTo("/login");
     }
 
 }

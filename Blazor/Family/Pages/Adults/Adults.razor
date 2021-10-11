@@ -24,7 +24,7 @@
     </div>
 
 
-    @if (adultsToShow == null)
+    @if (_adultsToShow == null)
     {
         <p>
             No data
@@ -33,7 +33,7 @@
     else
     {
         <div class="row" style="margin-top: 40px;">
-            @foreach (var adult in adultsToShow)
+            @foreach (var adult in _adultsToShow)
             {
                 <AdultCard AdultItem="@adult" RemoveAdult="RemoveAdult">
                 </AdultCard>
@@ -44,19 +44,18 @@
 
 
 @code {
-    private IList<Adult> adults;
-    private IList<Adult> adultsToShow;
+    private IList<Adult> _adults;
+    private IList<Adult> _adultsToShow;
 
-    private int? filterById;
-    private bool? filterByIsCompleted;
-    private string? filterByName;
+    private int? _filterById;
+    private string? _filterByName;
 
     private void FilterByUserId(ChangeEventArgs changeEventArgs)
     {
-        filterById = null;
+        _filterById = null;
         try
         {
-            filterById = int.Parse(changeEventArgs.Value.ToString());
+            if (changeEventArgs.Value != null) _filterById = int.Parse(changeEventArgs.Value.ToString() ?? throw new InvalidOperationException());
         }
         catch (Exception e)
         {
@@ -67,35 +66,36 @@
 
     private void FilterByFirstName(ChangeEventArgs changeEventArgs)
     {
-        filterByName = null;
+        _filterByName = null;
         try
         {
-            filterByName = changeEventArgs.Value.ToString();
+            if (changeEventArgs.Value != null) _filterByName = changeEventArgs.Value.ToString();
         }
         catch (Exception e)
         {
+    //
         }
         ExecuteFilter();
     }
 
     private void ExecuteFilter()
     {
-        adultsToShow = adults.Where(a => (filterById != null && a.Id == filterById || filterById == null) &&
-                                         ((filterByName != null && a.FirstName.ToLower().Contains(filterByName.ToLower()) || filterByName == null) || (filterByName != null && a.LastName.ToLower().Contains(filterByName.ToLower())) || filterByName == null)).ToList();
+        _adultsToShow = _adults.Where(a => (_filterById != null && a.Id == _filterById || _filterById == null) &&
+                                           ((_filterByName != null && a.FirstName.ToLower().Contains(_filterByName.ToLower()) || _filterByName == null) || (_filterByName != null && a.LastName.ToLower().Contains(_filterByName.ToLower())) || _filterByName == null)).ToList();
     }
 
     protected override async Task OnInitializedAsync()
     {
-        adults = _adultService.GetAdults();
-        adultsToShow = adults;
+        _adults = _adultService.GetAdults();
+        _adultsToShow = _adults;
     }
 
     void RemoveAdult(int adultId)
     {
-        Adult adultToRemove = adults.First(a => a.Id == adultId);
+        Adult adultToRemove = _adults.First(a => a.Id == adultId);
         _adultService.RemoveAdult(adultId);
-        adults.Remove(adultToRemove);
-        adultsToShow.Remove(adultToRemove);
+        _adults.Remove(adultToRemove);
+        _adultsToShow.Remove(adultToRemove);
     }
 
 }

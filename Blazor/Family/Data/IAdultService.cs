@@ -9,7 +9,5 @@ namespace Family.Data
         void AddAdult(Adult adult);
 
         void RemoveAdult(int adultId);
-        //
-        // Adult Get(int id);
     }
 }

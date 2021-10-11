@@ -1,9 +1,8 @@
 @page "/login"
-@namespace LoginComponent
 @using Family.Authentication
 
-@inject AuthenticationStateProvider AuthenticationStateProvider
-@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
 
 <section class="login">
     <AuthorizeView>
@@ -13,13 +12,13 @@
 
 
                 <label class="label">User name</label>
-                <input class="input" type="text" placeholder="user name" @bind-value="username"/>
+                <input class="input" type="text" placeholder="user name" @bind-value="_username"/>
 
 
                 <label class="label">Password</label>
-                <input class="input" type="password" placeholder="password" @bind-value="password"/>
+                <input class="input" type="password" placeholder="password" @bind-value="_password"/>
 
-                <div class="input__error-message">@errorMessage</div>
+                <div class="input__error-message">@_errorMessage</div>
                 <button class="login-button" type="button" @onclick="PerformLogin">
                     Login
                 </button>
@@ -28,29 +27,29 @@
         <Authorized>
             @if (true)
             {
-                NavigationManager.NavigateTo("/");
+                _navigationManager.NavigateTo("/");
             }
         </Authorized>
     </AuthorizeView>
 </section>
 
 @code {
-    private string username;
-    private string password;
-    private string errorMessage;
+    private string _username;
+    private string _password;
+    private string _errorMessage;
 
     public async Task PerformLogin()
     {
-        errorMessage = "";
+        _errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(username, password);
-            username = "";
-            password = "";
+            ((CustomAuthenticationStateProvider) _authenticationStateProvider).ValidateLogin(_username, _password);
+            _username = "";
+            _password = "";
         }
         catch (Exception e)
         {
-            errorMessage = e.Message;
+            _errorMessage = e.Message;
         }
     }
 

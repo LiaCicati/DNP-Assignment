@@ -27,9 +27,6 @@
 }
 
 
-
-
-
 .header__link:hover {
     opacity: .7;
 }
@@ -65,11 +62,11 @@
 }
 
 @media screen and (max-width: 573px) {
-.login-link {
-    justify-content: center;
-    display: flex;
-    max-width: 80px;
-    margin: 0 auto;
-    
-}
+    .login-link {
+        justify-content: center;
+        display: flex;
+        max-width: 80px;
+        margin: 0 auto;
+
+    }
 }

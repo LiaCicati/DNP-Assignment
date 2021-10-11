@@ -5,29 +5,29 @@
 @using Family.Persistence
 @using global::Models
 
-@inject IAdultService adultData
-@inject NavigationManager NavigationManager
-@inject FileContext FileContext
+@inject IAdultService _adultData
+@inject NavigationManager _navigationManager
+@inject FileContext _fileContext
 <section class="addAdults">
     <h3>Add Adult</h3>
     <form class="form">
 
-        <label class="label" for="fname">First name</label>
-        <input class="input" type="text" id="fname" name="fname" placeholder="First name"
-               @bind-value="@fname">
+        <label class="label" for="fName">First name</label>
+        <input class="input" type="text" id="fName" name="fName" placeholder="First name"
+               @bind-value="@_fName">
 
 
-        <label class="label" for="lname">Last name</label>
-        <input class="input" type="text" id="lname" name="lname" placeholder="Last name"
-               @bind-value="@lname">
+        <label class="label" for="lName">Last name</label>
+        <input class="input" type="text" id="lName" name="lName" placeholder="Last name"
+               @bind-value="@_lName">
 
 
         <label class="label" for="age">Age</label>
-        <input class="input" type="number" id="age" name="age" placeholder="Age" @bind-value="@age">
+        <input class="input" type="number" id="age" name="age" placeholder="Age" @bind-value="@_age">
 
 
         <label class="label" for="sex">Sex</label>
-        <select class="input" @bind="@sex">
+        <select class="input" id="sex" @bind="@_sex">
             <option value="">
                 Select gender
             </option>
@@ -44,7 +44,7 @@
         </select>
 
         <label class="label" for="hair-color">Hair color</label>
-        <select class="input" id="hair-color" name="hair-color" @bind="@hairColor">
+        <select class="input" id="hair-color" name="hair-color" @bind="@_hairColor">
             <option value="">
                 Select color
             </option>
@@ -70,7 +70,7 @@
         </select>
 
         <label class="label" for="eye-color">Eye color</label>
-        <select class="input" id="eye-color" name="eye-color" @bind="@eyeColor">
+        <select class="input" id="eye-color" name="eye-color" @bind="@_eyeColor">
             <option value="">
                 Select color
             </option>
@@ -100,19 +100,19 @@
 
         <label class="label" for="height">Height</label>
         <input class="input" type="text" id="height" name="height" placeholder="Height"
-               @bind-value="@height">
+               @bind-value="@_height">
 
         <label class="label" for="weight">Weight</label>
         <input class="input" type="text" id="weight" name="weight" placeholder="Weight"
-               @bind-value="@weight">
+               @bind-value="@_weight">
 
 
         <label class="label" for="job">Job</label>
-        <input class="input" type="text" id="job" name="job" placeholder="Job" @bind-value="@job">
+        <input class="input" type="text" id="job" name="job" placeholder="Job" @bind-value="@_job">
 
         <label class="label" for="salary">Salary</label>
         <input class="input" type="text" id="salary" name="salary" placeholder="Salary"
-               @bind-value="@salary">
+               @bind-value="@_salary">
 
         <button class="submit__button" @onclick="Submit" @onclick:preventDefault="true">Submit</button>
     </form>
@@ -120,41 +120,39 @@
 </section>
 
 @code{
-    private string fname;
-    private string lname;
-    private string age;
-    private string hairColor;
-    private string eyeColor;
-    private string weight;
-    private string height;
-    private string sex;
-    private string job;
-    private string salary;
-    private string street;
-    private string houseNr;
+    private string _fName;
+    private string _lName;
+    private string _age;
+    private string _hairColor;
+    private string _eyeColor;
+    private string _weight;
+    private string _height;
+    private string _sex;
+    private string _job;
+    private string _salary;
 
     public void Submit()
     {
-        var Adult = new Adult();
-        Adult.FirstName = fname;
-        Adult.LastName = lname;
-        Adult.HairColor = hairColor;
-        Adult.EyeColor = eyeColor;
-        Adult.Age = Int32.Parse(age);
-        Adult.Weight = float.Parse(weight);
-        Adult.Height = Int32.Parse(height);
-        Adult.Sex = sex;
-        var Job = new Job();
-        Job.JobTitle = job;
-        Job.Salary = Int32.Parse(salary);
-        Adult.JobTitle = Job;
+        var adult = new Adult();
+        adult.FirstName = _fName;
+        adult.LastName = _lName;
+        adult.HairColor = _hairColor;
+        adult.EyeColor = _eyeColor;
+        adult.Age = Int32.Parse(_age);
+        adult.Weight = float.Parse(_weight);
+        adult.Height = Int32.Parse(_height);
+        adult.Sex = _sex;
+        var job = new Job();
+        job.JobTitle = _job;
+        job.Salary = Int32.Parse(_salary);
+        adult.JobTitle = job;
 
-        var id = FileContext.Adults.Last<Adult>().Id;
-        Adult.Id = id + 1;
+        var id = _fileContext.Adults.Last<Adult>().Id;
+        adult.Id = id + 1;
 
-        adultData.AddAdult(Adult);
+        _adultData.AddAdult(adult);
 
-        NavigationManager.NavigateTo("/adults");
+        _navigationManager.NavigateTo("/adults");
     }
 
 

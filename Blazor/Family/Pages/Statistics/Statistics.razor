@@ -3,13 +3,13 @@
 @using Family.Data
 @using Syncfusion.Blazor
 @using Syncfusion.Blazor.Charts
-@inject IAdultService AdultService;
-@inject NavigationManager NavigationManager
+@inject IAdultService _adultService;
+@inject NavigationManager _navigationManager
 
 
 <SfAccumulationChart Title="Eye color statistics">
     <AccumulationChartSeriesCollection>
-        <AccumulationChartSeries DataSource="@data" XName="xValue" YName="yValue"
+        <AccumulationChartSeries DataSource="@_data" XName="XValue" YName="YValue"
                                  Name="Color">
             <AccumulationDataLabelSettings Visible="true" Name="total" Position="AccumulationLabelPosition.Outside"></AccumulationDataLabelSettings>
         </AccumulationChartSeries>
@@ -21,7 +21,7 @@
 
 <SfAccumulationChart Title="Hair statistics">
     <AccumulationChartSeriesCollection>
-        <AccumulationChartSeries DataSource="@dataSource" XName="xValue" YName="yValue" Name="Hair"
+        <AccumulationChartSeries DataSource="@_dataSource" XName="XValue" YName="YValue" Name="Hair"
                                  Type="AccumulationType.Pyramid" Width="30%" Height="90%">
             <AccumulationDataLabelSettings Visible="true" Name="total" Position="AccumulationLabelPosition.Outside"></AccumulationDataLabelSettings>
         </AccumulationChartSeries>
@@ -32,39 +32,39 @@
 
 
 @code{
-    private IList<Adult> adults;
-    private static IList<Adult> adultsData;
+    private IList<Adult> _adults;
+    private static IList<Adult> _adultsData;
 
 
     public class PieChart
     {
-        public string xValue { get; set; }
-        public double yValue { get; set; }
-        public string total { get; set; }
+        public string XValue { get; set; }
+        public double YValue { get; set; }
+        public string Total { get; set; }
     }
 
-    private List<PieChart> data = new List<PieChart>();
-    private List<PieChart> dataSource = new List<PieChart>();
+    private readonly List<PieChart> _data = new List<PieChart>();
+    private readonly List<PieChart> _dataSource = new List<PieChart>();
 
 
     protected override async Task OnInitializedAsync()
     {
-        adults = AdultService.GetAdults();
-        adultsData = adults;
-        data.Add(new PieChart {xValue = "Grey", yValue = GetPersonsWithEyeColor("Grey")});
-        data.Add(new PieChart {xValue = "Brown", yValue = GetPersonsWithEyeColor("Brown")});
-        data.Add(new PieChart {xValue = "Blue", yValue = GetPersonsWithEyeColor("Blue")});
-        data.Add(new PieChart {xValue = "Green", yValue = GetPersonsWithEyeColor("Green")});
-        data.Add(new PieChart {xValue = "Amber", yValue = GetPersonsWithEyeColor("Amber")});
-        dataSource.Add(new PieChart {xValue = "Brown", yValue = GetPersonWithHairColor("Brown")});
-        dataSource.Add(new PieChart {xValue = "Black", yValue = GetPersonWithHairColor("Black")});
-        dataSource.Add(new PieChart {xValue = "White", yValue = GetPersonWithHairColor("White")});
+        _adults = _adultService.GetAdults();
+        _adultsData = _adults;
+        _data.Add(new PieChart {XValue = "Grey", YValue = GetPersonsWithEyeColor("Grey")});
+        _data.Add(new PieChart {XValue = "Brown", YValue = GetPersonsWithEyeColor("Brown")});
+        _data.Add(new PieChart {XValue = "Blue", YValue = GetPersonsWithEyeColor("Blue")});
+        _data.Add(new PieChart {XValue = "Green", YValue = GetPersonsWithEyeColor("Green")});
+        _data.Add(new PieChart {XValue = "Amber", YValue = GetPersonsWithEyeColor("Amber")});
+        _dataSource.Add(new PieChart {XValue = "Brown", YValue = GetPersonWithHairColor("Brown")});
+        _dataSource.Add(new PieChart {XValue = "Black", YValue = GetPersonWithHairColor("Black")});
+        _dataSource.Add(new PieChart {XValue = "White", YValue = GetPersonWithHairColor("White")});
     }
 
     int GetPersonWithHairColor(string hairColor)
     {
         int p = 0;
-        foreach (var adult in adultsData)
+        foreach (var adult in _adultsData)
         {
             if (String.Equals(hairColor, adult.HairColor, StringComparison.CurrentCultureIgnoreCase))
             {
@@ -78,7 +78,7 @@
     int GetPersonsWithEyeColor(string eyeColor)
     {
         int p = 0;
-        foreach (var adult in adultsData)
+        foreach (var adult in _adultsData)
         {
             if (String.Equals(eyeColor, adult.EyeColor, StringComparison.CurrentCultureIgnoreCase))
             {
@@ -89,4 +89,3 @@
     }
 
 }
-

@@ -34,7 +34,6 @@ namespace Family
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddScoped<IUserService, InMemoryUserService>();
 
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
@@ -59,7 +58,8 @@ namespace Family
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTEyNDI1QDMxMzkyZTMzMmUzMExCZEtjSU1RZUJ5a1NPMUVkSXJQZFdyUmhZWmFhWjAvdkgycjdkL2dZMGM9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
+                "NTEyNDI1QDMxMzkyZTMzMmUzMExCZEtjSU1RZUJ5a1NPMUVkSXJQZFdyUmhZWmFhWjAvdkgycjdkL2dZMGM9");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
