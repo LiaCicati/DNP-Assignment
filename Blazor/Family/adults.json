@@ -226,21 +226,6 @@
   },
   {
     "JobTitle": {
-      "JobTitle": "Web developer",
-      "Salary": 4000
-    },
-    "Id": 15,
-    "FirstName": "Lia",
-    "LastName": "Cicati",
-    "HairColor": "Brown",
-    "EyeColor": "Brown",
-    "Age": 20,
-    "Weight": 44,
-    "Height": 167,
-    "Sex": "F"
-  },
-  {
-    "JobTitle": {
       "JobTitle": "Kitchen assistant",
       "Salary": 1000
     },

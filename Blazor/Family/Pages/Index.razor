@@ -5,10 +5,12 @@
         <Authorized>
             <h1>
                 Welcome back,
+
                 @if (context.User.Identity != null)
                 {
-                    @context.User.Identity.Name!
+                    @context.User.Identity.Name
                 }
+
             </h1>
         </Authorized>
         <NotAuthorized>
