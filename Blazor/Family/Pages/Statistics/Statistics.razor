@@ -49,16 +49,19 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _adults = _adultService.GetAdults();
-        _adultsData = _adults;
-        _data.Add(new PieChart {XValue = "Grey", YValue = GetPersonsWithEyeColor("Grey")});
-        _data.Add(new PieChart {XValue = "Brown", YValue = GetPersonsWithEyeColor("Brown")});
-        _data.Add(new PieChart {XValue = "Blue", YValue = GetPersonsWithEyeColor("Blue")});
-        _data.Add(new PieChart {XValue = "Green", YValue = GetPersonsWithEyeColor("Green")});
-        _data.Add(new PieChart {XValue = "Amber", YValue = GetPersonsWithEyeColor("Amber")});
-        _dataSource.Add(new PieChart {XValue = "Brown", YValue = GetPersonWithHairColor("Brown")});
-        _dataSource.Add(new PieChart {XValue = "Black", YValue = GetPersonWithHairColor("Black")});
-        _dataSource.Add(new PieChart {XValue = "White", YValue = GetPersonWithHairColor("White")});
+        await Task.Run(() =>
+        {
+            _adults = _adultService.GetAdults();
+            _adultsData = _adults;
+            _data.Add(new PieChart {XValue = "Grey", YValue = GetPersonsWithEyeColor("Grey")});
+            _data.Add(new PieChart {XValue = "Brown", YValue = GetPersonsWithEyeColor("Brown")});
+            _data.Add(new PieChart {XValue = "Blue", YValue = GetPersonsWithEyeColor("Blue")});
+            _data.Add(new PieChart {XValue = "Green", YValue = GetPersonsWithEyeColor("Green")});
+            _data.Add(new PieChart {XValue = "Amber", YValue = GetPersonsWithEyeColor("Amber")});
+            _dataSource.Add(new PieChart {XValue = "Brown", YValue = GetPersonWithHairColor("Brown")});
+            _dataSource.Add(new PieChart {XValue = "Black", YValue = GetPersonWithHairColor("Black")});
+            _dataSource.Add(new PieChart {XValue = "White", YValue = GetPersonWithHairColor("White")});
+        });
     }
 
     int GetPersonWithHairColor(string hairColor)

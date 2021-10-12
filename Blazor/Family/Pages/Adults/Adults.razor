@@ -48,7 +48,7 @@
     private IList<Adult> _adultsToShow;
 
     private int? _filterById;
-    private string? _filterByName;
+    private string _filterByName;
 
     private void FilterByUserId(ChangeEventArgs changeEventArgs)
     {
@@ -86,8 +86,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _adults = _adultService.GetAdults();
-        _adultsToShow = _adults;
+        await Task.Run(() =>
+        {
+            _adults = _adultService.GetAdults();
+            _adultsToShow = _adults;
+        });
     }
 
     void RemoveAdult(int adultId)
