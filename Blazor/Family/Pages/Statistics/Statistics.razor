@@ -51,14 +51,19 @@
     {
         _adults = await _adultService.GetAdults();
         _adultsData = _adults;
-        _data.Add(new PieChart {XValue = "Grey", YValue = GetPersonsWithEyeColor("Grey")});
+        _data.Add(new PieChart {XValue = "Grey", YValue = GetPersonsWithEyeColor("Gray")});
         _data.Add(new PieChart {XValue = "Brown", YValue = GetPersonsWithEyeColor("Brown")});
         _data.Add(new PieChart {XValue = "Blue", YValue = GetPersonsWithEyeColor("Blue")});
         _data.Add(new PieChart {XValue = "Green", YValue = GetPersonsWithEyeColor("Green")});
         _data.Add(new PieChart {XValue = "Amber", YValue = GetPersonsWithEyeColor("Amber")});
+        _data.Add(new PieChart {XValue = "Hazel", YValue = GetPersonsWithEyeColor("Hazel")});
+        _data.Add(new PieChart {XValue = "Other", YValue = GetPersonsWithEyeColor("Other")});
         _dataSource.Add(new PieChart {XValue = "Brown", YValue = GetPersonWithHairColor("Brown")});
         _dataSource.Add(new PieChart {XValue = "Black", YValue = GetPersonWithHairColor("Black")});
         _dataSource.Add(new PieChart {XValue = "White", YValue = GetPersonWithHairColor("White")});
+        _dataSource.Add(new PieChart {XValue = "Blond", YValue = GetPersonWithHairColor("Blond")});
+        _dataSource.Add(new PieChart {XValue = "Red", YValue = GetPersonWithHairColor("Red")});
+        _dataSource.Add(new PieChart {XValue = "Other", YValue = GetPersonWithHairColor("Other")});
     }
 
     int GetPersonWithHairColor(string hairColor)
