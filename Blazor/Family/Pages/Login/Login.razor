@@ -43,12 +43,10 @@
         _errorMessage = "";
         try
         {
-            await Task.Run(() =>
-            {
-                ((CustomAuthenticationStateProvider) _authenticationStateProvider).ValidateLogin(_username, _password);
-                _username = "";
-                _password = "";
-            });
+            await ((CustomAuthenticationStateProvider) _authenticationStateProvider).ValidateLogin(_username, _password);
+            _username = "";
+            _password = "";
+            _navigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {

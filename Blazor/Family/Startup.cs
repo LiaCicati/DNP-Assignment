@@ -1,13 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Family.Authentication;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,7 +27,7 @@ namespace Family
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IUserService, InMemoryUserService>();
+            services.AddScoped<IUserService, UserWebService>();
 
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddScoped<IAdultService, CloudAdultService>();
