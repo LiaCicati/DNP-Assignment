@@ -2,12 +2,11 @@
 @attribute [Authorize]
 @using Family.Models
 @using Family.Data
-@using Family.Persistence
 @using global::Models
+@using System.Net
 
 @inject IAdultService _adultData
 @inject NavigationManager _navigationManager
-@inject FileContext _fileContext
 <section class="addAdults">
     <h3>Add Adult</h3>
 
@@ -128,19 +127,18 @@
     private string _salary;
 
 
-    public void Submit()
+    public async void Submit()
     {
         var job = new Job();
         job.JobTitle = _job;
         job.Salary = Int32.Parse(_salary);
         newAdult.JobTitle = job;
-
-        var id = _fileContext.Adults.Last<Adult>().Id;
-        newAdult.Id = id + 1;
-
-        _adultData.AddAdult(newAdult);
-
-        _navigationManager.NavigateTo("/adults");
+        HttpStatusCode statusCode = await _adultData.AddAdult(newAdult);
+        if (statusCode == HttpStatusCode.Created || statusCode == HttpStatusCode.OK)
+        {
+            _navigationManager.NavigateTo("/adults");
+            StateHasChanged();
+        }
     }
 
 

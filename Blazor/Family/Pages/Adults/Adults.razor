@@ -35,7 +35,7 @@
         <div class="row" style="margin-top: 40px;">
             @foreach (var adult in _adultsToShow)
             {
-                <AdultCard AdultItem="@adult" RemoveAdult="RemoveAdult">
+                <AdultCard AdultItem="@adult" RemoveAdult="RemoveAdult" >
                 </AdultCard>
             }
         </div>
@@ -86,17 +86,15 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Run(() =>
-        {
-            _adults = _adultService.GetAdults();
-            _adultsToShow = _adults;
-        });
+        _adults = await _adultService.GetAdults();
+        _adultsToShow = _adults;
+        Console.WriteLine("###############" + _adultsToShow.Count);
     }
 
-    void RemoveAdult(int adultId)
+    private async Task RemoveAdult(int adultId)
     {
         Adult adultToRemove = _adults.First(a => a.Id == adultId);
-        _adultService.RemoveAdult(adultId);
+        await _adultService.RemoveAdult(adultId);
         _adults.Remove(adultToRemove);
         _adultsToShow.Remove(adultToRemove);
     }

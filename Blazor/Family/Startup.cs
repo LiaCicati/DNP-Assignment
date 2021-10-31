@@ -13,7 +13,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Family.Data;
 using Family.Data.Impl;
-using Family.Persistence;
 using Microsoft.AspNetCore.Components.Authorization;
 using Syncfusion.Blazor;
 
@@ -37,8 +36,7 @@ namespace Family
             services.AddScoped<IUserService, InMemoryUserService>();
 
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            services.AddScoped<IAdultService, AdultService>();
-            services.AddScoped<FileContext>();
+            services.AddScoped<IAdultService, CloudAdultService>();
             services.AddSyncfusionBlazor();
 
             services.AddAuthorization(options =>

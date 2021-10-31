@@ -1,13 +1,14 @@
 using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
 using Family.Models;
 
 namespace Family.Data
 {
     public interface IAdultService
     {
-        IList<Adult> GetAdults();
-        void AddAdult(Adult adult);
-
-        void RemoveAdult(int adultId);
+        Task<IList<Adult>> GetAdults();
+        Task<HttpStatusCode> AddAdult(Adult adult);
+        Task RemoveAdult(int adultId);
     }
 }
