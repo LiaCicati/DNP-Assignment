@@ -1,0 +1,64 @@
+@page "/register"
+@using Family.Authentication
+@using Family.Data
+@using global::Models
+@using Microsoft.AspNetCore.Components
+
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
+@inject IUserService _userService
+
+<section class="register">
+
+    <h2 class="heading">Register</h2>
+    <EditForm Model="@_newUser" class="form" OnValidSubmit="@Submit">
+
+        <label class="label">User name</label>
+        <InputText class="input" type="text" placeholder="user name" @bind-Value="_newUser.UserName"/>
+
+        <label class="label">Domain</label>
+        <InputText class="input" type="text" placeholder="domain" @bind-Value="_newUser.Domain"/>
+
+        <label class="label">City</label>
+        <InputText class="input" type="text" placeholder="city" @bind-Value="_newUser.City"/>
+
+        <label class="label">Birth Year</label>
+        <InputNumber class="input" type="number" placeholder="birth year" @bind-Value="_newUser.BirthYear"/>
+
+        <label class="label">Role</label>
+        <InputText class="input" type="text" placeholder="role" @bind-Value="_newUser.Role"/>
+
+
+        <label class="label">Security Level</label>
+        <InputNumber class="input" type="number" placeholder="security level" @bind-Value="_newUser.SecurityLevel"/>
+
+        <label class="label">Password</label>
+        <InputText class="input" type="password" placeholder="password" @bind-Value="_newUser.Password"/>
+
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="input__error-message">@_errorMessage</div>
+        <button class="register-button">
+            Register
+        </button>
+    </EditForm>
+</section>
+
+@code {
+    private User _newUser = new User();
+    private string _errorMessage;
+
+    public async void Submit()
+    {
+        try
+        {
+            await _userService.AddUserAsync(_newUser);
+            _navigationManager.NavigateTo("/login");
+        }
+        catch (Exception e)
+        {
+            _errorMessage = e.Message;
+        }
+    }
+
+}

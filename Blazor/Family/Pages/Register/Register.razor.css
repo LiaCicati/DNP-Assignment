@@ -1,0 +1,48 @@
+.register {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 70px 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #a0a0a0;
+    margin-top: 24px;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .register {
+        padding: 170px 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .register {
+        padding: 56px 30px 30px;
+    }
+    
+}
+
+.register-button {
+    margin-top: 130px;
+    width: 100%;
+    background: #5E81F4;
+    border-radius: 3px;
+    padding: 14px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    opacity: 0.8;
+}
